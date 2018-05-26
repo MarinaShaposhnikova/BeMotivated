@@ -1,18 +1,22 @@
-var image = document.querySelector('img');
-var heading = document.querySelector('h1');
+// import Card from './card.js';
+
+import {Card} from "./card.js";
+
+let image = document.querySelector('img');
+let heading = document.querySelector('h1');
 
 image.onclick = function () {
-  heading.textContent = 'Text content'
+  let card = Card.generateTestCard();
+  heading.textContent =  card.title;
 };
 
 heading.onclick = function () {
   setUserName();
-  var storedName = localStorage.getItem('name');
+  let storedName = localStorage.getItem('name');
   heading.textContent = 'You are so cool, ' + storedName;
-}
-;
+};
 
 function setUserName() {
-  var myName = prompt('Please enter your name.');
+  let myName = prompt('Please enter your name.');
   localStorage.setItem('name', myName);
 }
