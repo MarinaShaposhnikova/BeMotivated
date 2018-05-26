@@ -1,13 +1,13 @@
-// import Card from './card.js';
-
-import {Card} from "./card.js";
+import _ from 'lodash';
+import './assets/scss/app.scss';
+import css from './assets/css/app.css';
 
 let image = document.querySelector('img');
 let heading = document.querySelector('h1');
 
 image.onclick = function () {
-  let card = Card.generateTestCard();
-  heading.textContent =  card.title;
+  // let card = Card.generateTestCard();
+  // heading.textContent =  card.title;
 };
 
 heading.onclick = function () {
