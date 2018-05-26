@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import './assets/scss/app.scss';
 import css from './assets/css/app.css';
+import {Card} from "./js/card";
+let card = Card.generateTestCard();
 
 let image = document.querySelector('img');
 let heading = document.querySelector('h1');
 
 image.onclick = function () {
-  // let card = Card.generateTestCard();
-  // heading.textContent =  card.title;
+  heading.textContent =  card.title;
 };
 
 heading.onclick = function () {
@@ -18,5 +19,8 @@ heading.onclick = function () {
 
 function setUserName() {
   let myName = prompt('Please enter your name.');
+  if(!myName) {
+    myName = card.author;
+  }
   localStorage.setItem('name', myName);
 }
