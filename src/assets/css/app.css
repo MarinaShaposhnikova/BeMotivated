@@ -8,9 +8,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-/*body {*/
-  /*background: mintcream;*/
-/*}*/
+body {
+  background: mintcream;
+}
 
 html {
   color: #222;

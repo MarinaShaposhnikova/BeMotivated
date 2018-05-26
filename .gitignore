@@ -1,9 +1,16 @@
-## System and generated files
-.idea
-.DS_Store
-.sass-cache
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Useful .gitignore templates: https://github.com/github/gitignore
+### Example user template template
+### Example user template
 
-## Directories
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
 log/
 dist/
 node_modules/
+.DS_Store
+.sass-cache
