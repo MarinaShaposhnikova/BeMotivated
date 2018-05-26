@@ -1,0 +1,8 @@
+@import '_colors';
+#main {
+  background: linear-gradient($startbgcolor, $endbgcolor);
+}
+#card {
+  background: $cardcolor;
+}
+
