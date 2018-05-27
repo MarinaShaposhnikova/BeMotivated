@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import _ from "lodash";
 import "./assets/scss/app.scss";
 import css from "./assets/css/app.css";
-import {generateTestCard} from "./js/utils/mock";
+import {generateTestCards} from "./js/utils/mock";
 import img from "./assets/media/icon.png";
 
 class Leaf extends React.Component {
@@ -13,7 +13,7 @@ class Leaf extends React.Component {
 		this.cards = this.props.cards;
 		this.state = {
 			card: this.props.cards[0],
-			position:0
+			position: 0
 		};
 		this.swipeCard = this.swipeCard.bind(this);
 	}
@@ -25,7 +25,7 @@ class Leaf extends React.Component {
 		}
 		this.setState({
 			card: this.props.cards[position],
-			position:position
+			position: position
 		});
 	}
 
@@ -51,22 +51,15 @@ class CardBlock extends React.Component {
 	}
 
 	render() {
-		return <div id="card">
-			<h1 onClick={this.onClick}>{this.props.card.title}</h1>
+		return <div id="card" onClick={this.onClick}>
+			<h1>{this.props.card.title}</h1>
 			<img src={img}/>
 		</div>;
 	}
 }
 
 // Here must be all cards
-const CARDS = [
-	generateTestCard(),
-	generateTestCard(),
-	generateTestCard(),
-	generateTestCard()
-];
-
 ReactDOM.render(
-	<Leaf cards={CARDS}/>,
+	<Leaf cards={generateTestCards(5)}/>,
 	document.getElementById("container")
 );

@@ -1,6 +1,14 @@
 import {Card} from "../card";
 
-export function generateTestCard() {
+export function generateTestCards(count) {
+	let cards = [];
+	for (let i = 0; i < count; i++) {
+		cards.push(generateTestCard());
+	}
+	return cards;
+}
+
+function generateTestCard() {
 	return new Card(`Be ${generateRandomTitle()}`, "It's so easy.", "Marina");
 }
 
