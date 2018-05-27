@@ -17,3 +17,14 @@ export class Card {
 		this._title = title;
 	}
 }
+
+export class CardImage extends Card {
+	constructor(title, description, author, image) {
+		super(title, description, author);
+		this._image = image;
+	}
+
+	get image() {
+		return this._image;
+	}
+}

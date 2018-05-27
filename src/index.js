@@ -4,8 +4,7 @@ import ReactDOM from "react-dom";
 import _ from "lodash";
 import "./assets/scss/app.scss";
 import css from "./assets/css/app.css";
-import {generateTestCards} from "./js/utils/mock";
-import img from "./assets/media/icon.png";
+import {generateCards} from "./js/data/data";
 
 class Leaf extends React.Component {
 	constructor(props) {
@@ -52,14 +51,15 @@ class CardBlock extends React.Component {
 
 	render() {
 		return <div id="card" onClick={this.onClick}>
-			<h1>{this.props.card.title}</h1>
-			<img src={img}/>
+			<img id="card-image" src={this.props.card.image}/>
+			<h1 id="card-title">{this.props.card.title}</h1>
+			<h3 id="card-author">{this.props.card.author}</h3>
 		</div>;
 	}
 }
 
 // Here must be all cards
 ReactDOM.render(
-	<Leaf cards={generateTestCards(5)}/>,
+	<Leaf cards={generateCards()}/>,
 	document.getElementById("container")
 );
