@@ -6,7 +6,7 @@ export class Card {
 	}
 
 	static generateTestCard() {
-		return new Card("Title", "Desc", "Author");
+		return new Card("Be cool", "It's so easy. Be cool.", "Marina");
 	}
 
 	get author() {

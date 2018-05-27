@@ -1,4 +1,7 @@
 @import '_colors';
+body {
+  background:mintcream;
+}
 #main {
   background: linear-gradient($startbgcolor, $endbgcolor);
 }
