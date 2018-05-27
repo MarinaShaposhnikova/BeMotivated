@@ -1,3 +1,4 @@
+// TODO Descriptions here are original quotes on Russian. Don't need to implement setters or getters
 export class Card {
 	constructor(title, description, author) {
 		this._title = title;
