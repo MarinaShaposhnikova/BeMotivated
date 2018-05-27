@@ -16,13 +16,15 @@ const config = {
   module: {
     rules: [
 
-      // babel-loader with 'env' preset
+      // babel-loader and el-lint
       { test: /\.js$/,
         include: /src/,
         exclude: /node_modules/,
-        use:
-          { loader: "babel-loader", options:
-              { presets: ['env'] } } },
+          use: [
+              "babel-loader",
+              "eslint-loader",
+          ],
+      },
 
       // html-loader
       { test: /\.html$/, use: ['html-loader'] },
