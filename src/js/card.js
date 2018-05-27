@@ -5,10 +5,6 @@ export class Card {
 		this._author = author;
 	}
 
-	static generateTestCard() {
-		return new Card("Be cool", "It's so easy. Be cool.", "Marina");
-	}
-
 	get author() {
 		return this._author;
 	}
@@ -21,4 +17,3 @@ export class Card {
 		this._title = title;
 	}
 }
-

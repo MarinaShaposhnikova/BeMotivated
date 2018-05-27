@@ -4,37 +4,69 @@ import ReactDOM from "react-dom";
 import _ from "lodash";
 import "./assets/scss/app.scss";
 import css from "./assets/css/app.css";
-import {Card} from "./js/card";
+import {generateTestCard} from "./js/utils/mock";
+import img from "./assets/media/icon.png";
 
 class Leaf extends React.Component {
+	constructor(props) {
+		super(props);
+		this.cards = this.props.cards;
+		this.state = {
+			card: this.props.cards[0],
+			position:0
+		};
+		this.swipeCard = this.swipeCard.bind(this);
+	}
+
+	swipeCard(position) {
+		position++;
+		if (position >= this.props.cards.length) {
+			position = 0;
+		}
+		this.setState({
+			card: this.props.cards[position],
+			position:position
+		});
+	}
+
 	render() {
 		return <div id="main">
-			<CardBlock card={this.props.card}/>
+			<CardBlock
+				card={this.state.card}
+				swipeCard={this.swipeCard}
+				position={this.state.position}
+			/>
 		</div>;
 	}
 }
 
 class CardBlock extends React.Component {
-	handleClick() {
-		let myName = prompt("Please enter your name.");
+	constructor(props) {
+		super(props);
+		this.onClick = this.onClick.bind(this);
+	}
 
-		localStorage.setItem("name", myName);
+	onClick() {
+		this.props.swipeCard(this.props.position);
 	}
 
 	render() {
 		return <div id="card">
-			<h1 onClick={this.handleClick}>{this.props.card.title}</h1>
-			<img src="./assets/media/icon.png"/>
+			<h1 onClick={this.onClick}>{this.props.card.title}</h1>
+			<img src={img}/>
 		</div>;
 	}
 }
 
 // Here must be all cards
 const CARDS = [
-	Card.generateTestCard()
+	generateTestCard(),
+	generateTestCard(),
+	generateTestCard(),
+	generateTestCard()
 ];
 
 ReactDOM.render(
-	<Leaf card={CARDS[0]}/>,
+	<Leaf cards={CARDS}/>,
 	document.getElementById("container")
 );
