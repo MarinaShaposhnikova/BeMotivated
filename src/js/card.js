@@ -1,20 +1,24 @@
 export class Card {
-  constructor(title, description, author) {
-    this._title = title;
-    this._description = description;
-    this._author = author;
-  }
+	constructor(title, description, author) {
+		this._title = title;
+		this._description = description;
+		this._author = author;
+	}
 
-  static generateTestCard(){
-    return new Card('Title', 'Desc', 'Author');
-  }
+	static generateTestCard() {
+		return new Card("Be cool", "It's so easy. Be cool.", "Marina");
+	}
 
-  get title() {
-    return this._title;
-  }
+	get author() {
+		return this._author;
+	}
 
-  set title(title) {
-    this._title = title;
-  }
+	get title() {
+		return this._title;
+	}
+
+	set title(title) {
+		this._title = title;
+	}
 }
 

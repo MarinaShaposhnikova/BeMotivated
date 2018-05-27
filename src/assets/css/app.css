@@ -8,10 +8,6 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-body {
-  background: mintcream;
-}
-
 html {
   color: #222;
   font-size: 1em;
@@ -25,7 +21,6 @@ html {
   padding: 5%;
   margin: 20px;
   display: flex;
-  background: linear-gradient(#FC485C, #FA3A4B);
   align-items: center;
   justify-content: center;
   top: 0;
@@ -41,7 +36,6 @@ html {
   padding: 10px;
   border-radius: 2px;
   min-height: 100%;
-  background: #FB3748;
 }
 
 /*
