@@ -1,3 +1,4 @@
+// TODO Descriptions here are original quotes on Russian. Don't need to implement setters or getters
 export class Card {
 	constructor(title, description, author) {
 		this._title = title;
@@ -15,5 +16,16 @@ export class Card {
 
 	set title(title) {
 		this._title = title;
+	}
+}
+
+export class CardImage extends Card {
+	constructor(title, description, author, image) {
+		super(title, description, author);
+		this._image = image;
+	}
+
+	get image() {
+		return this._image;
 	}
 }

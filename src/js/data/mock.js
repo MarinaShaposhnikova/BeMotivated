@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import {Card} from "../card";
+import {CardImage} from "../card";
 
 export function generateTestCards(count) {
 	let cards = [];
@@ -10,6 +12,10 @@ export function generateTestCards(count) {
 
 function generateTestCard() {
 	return new Card(`Be ${generateRandomTitle()}`, "It's so easy.", "Marina");
+}
+
+function generateTestCardImage() {
+	return new CardImage(`Be ${generateRandomTitle()}`, "It's so easy.", "Marina", "./assets/media/bulb.svg");
 }
 
 function generateRandomTitle() {
