@@ -18,22 +18,29 @@ html {
     position: fixed;
     box-shadow: #555555;
     border-radius: 2px;
-    padding: 5%;
+    padding: 40px;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: unset;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 }
 
+/*FIXME: It should be more clearly*/
+
 #card {
-    max-width: 40%;
-    min-width: 30%;
-    box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
+    width: 40%;
     padding: 20px;
+    box-shadow: -10px 10px 80px rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: relative;
     border-radius: 2px;
     min-height: 100%;
     display: flex;
@@ -42,7 +49,37 @@ html {
     justify-content: stretch;
     font-style: normal;
     font-family: Marion, fantasy;
+}
 
+#card-back {
+    width: 42%;
+    top: 0;
+    box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    bottom: 0;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    position: absolute;
+}
+
+#card-back-last {
+    width: 44%;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    top: 0;
+    box-shadow: -40px 40px 30px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    align-self: center;
+    position: absolute;
+}
+
+.fade {
+    animation: fade-in-keyframes 1s;
+}
+@keyframes fade-in-keyframes {
+    from {opacity: 0.01;}
+    to {opacity: 1}
 }
 
 #card > *:first-child {
