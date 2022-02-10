@@ -45,7 +45,7 @@
     "jquery": "3.5.0",
     "mocha": "^5.2.0",
     "modernizr": "3.6.0",
-    "node-sass": "~4.13.1",
+    "node-sass": "~7.0.0",
     "normalize.css": "8.0.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "~6.0.6",
